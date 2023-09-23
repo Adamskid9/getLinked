@@ -1,0 +1,237 @@
+:root{
+  --bg-color:#150E28;
+  --color:#903AFF;
+  --text-color:#D434FE;
+  --white:#FFFFFF;
+}
+
+*::after,
+*::before,*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+};
+
+html{
+  font-size:62.5%;
+}
+
+body{
+ background-color:#150e28;
+}
+.register{
+  padding: 3rem;
+  display:flex;
+  flex-direction: column;
+  position: relative;
+  /* border: 2px solid red; */
+}
+.imag{
+  height: 35rem;
+  width: 100%;
+}
+.btn{
+    padding:  .5rem;
+    background-image:linear-gradient(to right,#903AFF,#D434FE,#FF26B9,#FE34B9 ) ;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 1.2rem;
+    border-radius:4px;
+  }
+.getlinked{
+  color: #FFFFFF;
+  font-size: 1.9rem;
+  font-weight: 900;
+  margin-left: 3rem;
+}
+.getlinked_spa{
+  color:var(--text-color);
+  font-size: 1.9rem;
+  font-weight: 900;
+}
+.reg_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reg_item{
+  list-style: none;
+  display: flex;
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+.reg_list:not(:last-child){
+    margin-right: 2rem;
+}
+.register_main{
+  position: relative;
+  display: flex;
+  margin-top: 5rem;
+}
+.reg_img{
+  flex: 0 0 40%;
+}
+.reg_container{
+  flex: 0 0 60%;
+  border-radius: 6px;
+  padding: 0 4rem;
+  margin-top: 1.3rem;
+  width: 100%;
+  /* border: 2px solid green; */
+
+}
+.reg_form{
+  display: flex;
+  flex-direction: column;
+  background: #e7e2e209;
+  padding: 3rem 2.6rem;
+  /* border: 2px solid blue; */
+}
+.form{
+  display: flex;
+  margin-top: 1rem;
+
+}
+.reg_text{
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: .7rem;
+  color: var(--text-color);
+  
+}
+
+
+.create_acc{
+  margin-bottom: .5rem;
+  color: var(--white);
+}
+.part{
+  margin-bottom: .7rem;
+  color: var(--white);
+}
+.input_value{
+  background-color: #FFFFFF08;
+  border: .1rem solid #FFFFFF;
+  padding: .5rem 1rem;
+  color: #f1f1f1;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  height: 2.5rem;
+}
+.marginLeft{
+  margin-left:1rem
+}
+.marginRight{
+  margin-right: 1rem;
+}
+.clas2{
+ margin-left: 1rem;
+}
+.input_container{
+    position: relative;
+}
+.label{
+    position: absolute;
+    bottom: 3.8rem;
+    color: var(--white);
+}
+.select{
+  width: 13rem;
+  text-align: center;
+  padding: .1rem;
+}
+.review{
+  margin-top: 1.5rem;
+  color: var(--text-color);
+}
+.policy{
+  margin: 1rem 0;
+  color: var(--white);
+}
+
+@media only screen and (max-width:700px){
+  .reg_header{
+    display: none;
+  }
+  
+}
+@media only screen and (max-width:600px){
+.register{
+  padding: 0;
+}
+.label,.part,.review,.policy{
+  font-size: .9rem;
+}
+.marginRight{
+  margin-right: .5rem;
+}
+
+}
+@media only screen and (max-width:400px){
+  .marginRight{
+    margin-right: 0;
+  }
+  .reg_form{
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:900px){
+  .register_main{
+    position: relative;
+    display: flex;
+    flex-direction:column;   
+
+     
+  }
+  .reg_form{
+    background: transparent;
+  }
+  .form_input{
+    display: flex;
+    flex-direction: column;
+  }
+  .marginLeft{
+    margin-left: 0;
+  }
+  .register{
+    padding:0;
+   }
+   .reg_container{
+    padding: 0 ;
+  
+  }
+  .select{
+    width: 100%;
+}
+.threeD_img{
+  height: 0rem;
+}
+  .input_value{
+    width: 100%;
+    height: 3rem;
+  }
+  .label{
+    margin-bottom: .5rem;
+  }
+  .clas2{
+    margin-left: 0;
+  }
+
+}
+
+
+@media only screen and (max-width:1010px){
+   .register{
+    padding:2rem 1rem ;
+   }
+   .reg_container{
+    padding: 0 .2rem;
+  
+  }
+  
+
+}
+
