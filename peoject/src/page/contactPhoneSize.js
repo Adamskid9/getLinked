@@ -2,9 +2,18 @@ import GlowEffect from "../components/GlowEffect";
 import Footer from "../components/Footer";
 import Star from "../components/star";
 import StarPu from "../components/StarPu";
+import {useState} from "react"
 
 
 function ContactPhoneSize() {
+    //phone size variable
+    const [team,setTeam] = useState();
+    const [topic,setTopic] = useState();
+    const [email,setEmail] = useState();
+    const [message,setMessage] = useState();
+// kenny use this variable to where it belong
+    console.log(team,topic,email,message)
+
     return (
         <div className="contactPhoneSize">
             <Star top={5} left={17} />
@@ -30,10 +39,10 @@ function ContactPhoneSize() {
 
             
             <form className="contact_form">
-                <input type="text" className="contact_sm" placeholder="Team's Name" />
-                <input type="text" className="contact_sm" placeholder="Topic"/>
-                <input type="text" className="contact_sm" placeholder="Email"/>
-                <textarea className="textarea" placeholder="Message"></textarea>
+                <input type="text" onChange={(e)=>setTeam(e.target.value)} className="contact_sm" placeholder="Team's Name" />
+                <input type="text" onChange={(e)=>setTopic(e.target.value)} className="contact_sm" placeholder="Topic"/>
+                <input type="text" onChange={(e)=>setEmail(e.target.value)} className="contact_sm" placeholder="Email"/>
+                <textarea className="textarea" onChange={(e)=>setMessage(e.target.value)} placeholder="Message" style={{padding:"1rem"}}></textarea>
                 <button className="btn_contact">Submit</button>            
             </form>
                 <Footer/>

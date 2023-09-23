@@ -1,9 +1,16 @@
 import Button from "../components/button";
 import Footer from "../components/Footer";
 import GlowEffect from "../components/GlowEffect";
+import { useState } from "react";
 
 
 function ContactTabSize() {
+    const [team,setTeam] = useState();
+    const [topic,setTopic] = useState();
+    const [email,setEmail] = useState();
+    const [message,setMessage] = useState();
+    // kenny use this variable to where it belong
+    console.log(team,topic,email,message)
     return (
         <div className="contactTabSize">
             <GlowEffect bottom={0} right={3}/>
@@ -50,9 +57,10 @@ function ContactTabSize() {
                         <h3>Let us know about it</h3>
                      </div>
                      <form className="main_QandA_form">
-                        <input className="contact_bg"/>
-                        <input className="contact_bg"/>
-                        <textarea className="textarea"></textarea>
+                        <input className="contact_bg" onChange={(e)=>setTeam(e.target.value)} placeholder={"Team's Name"}/>
+                        <input className="contact_bg" onChange={(e)=>setTopic(e.target.value)} placeholder={"Topic"}/>
+                        <input className="contact_bg" onChange={(e)=>setEmail(e.target.value)} placeholder={"Email"}/>
+                        <textarea className="textarea" onChange={(e)=>setMessage(e.target.value)} placeholder="Message" style={{padding:"1rem"}}></textarea>
                         <Button name="Submit" style={{marginTop:"1rem"
                         ,alignSelf:"center",width:"9rem",
                         borderRadius:"4px",padding:"10px"

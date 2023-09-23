@@ -4,7 +4,7 @@ import Register from "./page/Register";
 function App() {
   return (<>
  <Contact/>
-<Register/>
+{/* <Register/> */}
   </>
   )
 };
