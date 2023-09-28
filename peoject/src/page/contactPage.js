@@ -1,15 +1,19 @@
+import { useState } from "react";
 import "../ContactPageStyles.css"
 import ContactPhoneSize from "./contactPhoneSize";
 import ContactTabSize from "./contactTabSize";
 
 
-function contact() {
+
+function Contact() {
+  const [formData,setFormData] = useState([])
+console.log(formData,"sss")
     return (
      <>
-       <ContactTabSize/>
+       <ContactTabSize formData={formData} setFormData={setFormData}/>
        <ContactPhoneSize/>
      </>
     )
 };
 
-export default contact;
+export default Contact;

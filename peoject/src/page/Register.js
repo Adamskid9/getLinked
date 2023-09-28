@@ -1,24 +1,111 @@
+import { useEffect, useState } from "react";
 import GlowEffect from "../components/GlowEffect";
 import Select from "../components/Select";
 import StarPu from "../components/StarPu";
-import Button from "../components/button";
+import Button from "../components/btn";
 import Input from "../components/input";
 import Star from "../components/star";
+import Header from "../components/SectionHeader";
+import '../RegisterPage.css';
+import Loader from "../components/loaderBtn";
+import fetchCategories from "../components/PostReg";
 
+
+
+const BASE_URL = 'https://backend.getlinked.ai';
 
 function Register() {
+const [dataR,setDataR] = useState([]);
+
+const [teamR,setTeamR] = useState("");
+const [topicR,setTopicR] = useState("");
+const [emailR,setEmailR] = useState("");
+const [phoneR,setPhoneR] = useState("");
+const [catergory,setCatergory] = useState("");
+const [group,setgroup] = useState("");
+
+const [userData,setUserData] = useState([]);
+
+const [loadBtn,setLoadBtn] = useState(false);
+               
+
+const check = function(e){
+    e.preventDefault();
+    if(teamR && topicR && emailR && phoneR){
+    setUserData(cur=>[...cur,{teamR,topicR,emailR,phoneR}]);
+    setLoadBtn(true);
+
+    const user = {teamR,topicR,emailR,phoneR};
+    fetchCategories(user);
+
+
+ setTimeout(function(){
+  setLoadBtn(false)
+ },1000)
+
+   }
+
+    setTeamR("");
+    setEmailR("");
+    setPhoneR("");
+    setTopicR("")
+}
+
+// this user data....u see it in console
+// fill the form and submit then check console
+console.log(userData);
+
+
+
+useEffect(function(){
+    async function Api(){
+        try{
+    const req = await fetch(`${BASE_URL}/hackathon/categories-list`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    
+  if(!req.ok) throw new Error("something went wrong")
+  const data = await req.json();
+  setDataR(data);
+  
+        }catch(e){
+        console.log(e.message,"error")
+        }
+
+    }
+    Api();
+},[]);
+
+
+  function handleCatergory(e){
+   setCatergory(e.target.value)
+  };
+  function handleGroup(e){
+   setgroup(e.target.value)
+  };
+  function handleTeamR(e){
+   setTeamR(e.target.value)
+  };
+  function handleTopicR(e){
+   setTopicR(e.target.value)
+  };
+  function handleEmailR(e){
+   setEmailR(e.target.value)
+  };
+  function handlePhoneR(e){
+   setPhoneR(e.target.value)
+  };
+
+
+
+
     return (
         <div className="register">
-             <header className="reg_header">    
-                <h2 className="getlinked">get<span className="getlinked_spa">linked</span></h2>
-                <ul className="reg_item">
-                    <li className="reg_list">Timeline</li>
-                    <li className="reg_list">Overview</li>
-                    <li className="reg_list">FAQs</li>
-                    <li className="reg_list">Contact Us</li>                        
-                </ul>
-                <Button name="Register"></Button>
-            </header>
+
+            <Header/>
 
             <div className="register_main">
                 <Star right={23} top={3}/>
@@ -35,36 +122,44 @@ function Register() {
                 </div>
                 
                 <div className="reg_container">
+
+
                     <form className="reg_form">
+
+                        
                         <p className="reg_text">Register</p>
                         <p className="part">Be part of this movement!</p>
                         <h3 className=" create_acc">CREATE YOUR ACCOUNT</h3>
                         <div className="form form_input">
-                            <Input label={"Team's Name"} placeholder={"Enter the name of the group"}/>
-                            <Input label={"Phone"}
+                            <Input type={"text"} label={"Team's Name"} value={teamR} handle={handleTeamR} placeholder={"Enter the name of the group"}/>
+                            <Input type={"number"} label={"Phone"}
                              placeholder={"Enter your phone number"}
+                             value={phoneR}
+                             handle={handlePhoneR}
                               clas={"marginLeft"} clas2={"clas2"}/>
                         </div>
+
+
+
                         <div className="form form_input">
-                            <Input label={"Email"} placeholder={"Enter your email address"}/>
-                            <Input label={"Project Topic"}
+                            <Input type={"email"} value={emailR} handle={handleEmailR} label={"Email"}  placeholder={"Enter your email address"}/>
+                            <Input type={"text"} handle={handleTopicR} label={"Project Topic"}
                              placeholder={"What is your project topic"}
+                             value={topicR}
                              clas={"marginLeft"} clas2={"clas2"} />
                         </div>
+
+
+
                         <div className="form select_input">
-                           <Select text={"Category"}>
-                            <option>Select your catergory</option>
-                            <option>Frontend Developer</option>
-                            <option>Backend Developer</option>
-                            <option>Full stack</option>
+                           <Select text={"Category"} selectEle={handleCatergory} value={catergory}>
+                            <option>select your catergory</option>
+                            {dataR&&dataR.map(value=><option key={value.name} value={value.name} >{value.name}</option>)}
                            </Select>
-                           <Select text={"Group size"} marginLeft={"marginLeft"} >
-                           <option>--Select--</option>
-                           <option>0-5</option>
-                           <option>10-15</option>
-                           <option>15-20</option>
-                           <option>20-30</option>
-                           <option>30-45</option>
+                           <Select text={"Group size"} marginLeft={"marginLeft"} selectEle={handleGroup} value={group} >
+                           <option value={"0-5"}>0-5</option>
+                           <option value={"10-15"}>10-15</option>
+                           <option value={"15-20"}>15-20</option>
                            </Select>
                         </div>
 
@@ -78,10 +173,12 @@ function Register() {
                             <span style={{marginLeft:"5px"}}> I agreed with the event terms and conditions  and privacy policy</span>
                           </div>
 
-                          <Button name={"Register Now"}/>
+                          <Button fontSize={"1.5"} text={"Register Now"} check={check} loading={loadBtn}>
+                            <Loader/>
+                          </Button>
 
                     </form>
-
+ 
                   
 
                 </div>

@@ -1,0 +1,81 @@
+
+/* Clash Display*/
+@font-face {
+  font-family: "Clash Display";
+  src: url(/fonts/ClashDisplay-Bold.woff), format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url(/fonts/ClashDisplay-Medium.woff), format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url(/fonts/ClashDisplay-Light.woff), format('woff');
+  font-weight: lighter;
+}
+
+/*    Montserrat  */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(/fonts/Montserrat-Bold.ttf), format('ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(/fonts/Montserrat-Medium.ttf), format('ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(/fonts/Montserrat-Light.ttf), format('ttf');
+  font-weight: lighter;
+}
+
+
+:root {
+  /* COLORS */
+  --color-1: #150E28;
+  --color-2: #903AFF;
+  --color-3: #D434FE;
+  --color-4: #fff;
+  --color-5: #00A3FF;
+
+  /* FONTS */
+  --font-1: "Clash Display";
+  --font-2: "Montserrat";
+ 
+  --size-1: 1rem;
+  --size-2: 1.5rem;
+  --size-3: 2rem;
+  --size-4: 2.5rem;
+  --size-5: 3rem;
+  
+   
+}
+
+/* Utility Class */
+.color-purple {
+  color: var(--color-3);
+}
+
+.gradient {
+  background-image: linear-gradient(to right, var(--color-3), var(--color-2));
+}
+
+.border-bottom {
+  border-bottom:.1rem solid #333;
+}
+
+/* MEDIA QUERY */
+@media (min-width: 48rem) {
+  html {
+    font-size: 80%; /*8px*/
+  }
+}

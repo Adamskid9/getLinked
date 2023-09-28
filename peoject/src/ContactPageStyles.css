@@ -12,9 +12,8 @@ html{
 
 body{
  background-color:#150e28;
- padding: 2rem;
+ padding: 0rem;
 }
-
 
 .header{
  display: flex;
@@ -40,11 +39,9 @@ body{
   width: 23rem;
   color: white; 
   width: 100%;  
-  /* border: 2px solid green; */
 }
 .icon_share{
  display: flex;
- /* justify-content: space-between;    */
  margin-top: 5%;
 }
 .share:not(:last-child){
@@ -55,7 +52,7 @@ body{
 /* tab-land */
  @media only screen and (max-width:800px){
   body{
-    padding: 1rem;
+    padding: 0rem;
   }
   .contactPhoneSize{
     display: none;
@@ -121,11 +118,9 @@ body{
     margin-bottom:2rem;
     color:#FFFFFF;
     font-size: 1rem;
-   
   }
 
   .main-QandA{
-
     padding: 1rem 2rem;
     flex: 0 0 60%;
     background: #e7e2e209;
@@ -167,7 +162,7 @@ body{
 /* tab-port */
 @media only screen and (max-width:1200px){
   body{
-    padding: 2rem;
+    padding:0rem;
   }
   .contactPhoneSize{
     display: none;
@@ -286,7 +281,7 @@ body{
 
 
   body{
-    padding: 2rem;
+    padding: 0rem;
    }
 
   .icon_group1{
@@ -384,7 +379,7 @@ body{
 /* Desktop size */
 @media only screen and (min-width:1200px){
   body{
-    padding: 2.5rem;
+    padding: 0rem;
   }
   .contactPhoneSize{
     display: none;

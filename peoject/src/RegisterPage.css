@@ -5,17 +5,6 @@
   --white:#FFFFFF;
 }
 
-*::after,
-*::before,*{
- padding: 0;
- margin: 0;
- box-sizing: border-box;
-};
-
-html{
-  font-size:62.5%;
-}
-
 body{
  background-color:#150e28;
 }
@@ -39,32 +28,7 @@ body{
     font-size: 1.2rem;
     border-radius:4px;
   }
-.getlinked{
-  color: #FFFFFF;
-  font-size: 1.9rem;
-  font-weight: 900;
-  margin-left: 3rem;
-}
-.getlinked_spa{
-  color:var(--text-color);
-  font-size: 1.9rem;
-  font-weight: 900;
-}
-.reg_header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.reg_item{
-  list-style: none;
-  display: flex;
-  color: var(--white);
-  font-size: 1.2rem;
-}
 
-.reg_list:not(:last-child){
-    margin-right: 2rem;
-}
 .register_main{
   position: relative;
   display: flex;
@@ -79,15 +43,14 @@ body{
   padding: 0 4rem;
   margin-top: 1.3rem;
   width: 100%;
-  /* border: 2px solid green; */
-
+  
 }
 .reg_form{
   display: flex;
   flex-direction: column;
   background: #e7e2e209;
   padding: 3rem 2.6rem;
-  /* border: 2px solid blue; */
+
 }
 .form{
   display: flex;
@@ -95,10 +58,11 @@ body{
 
 }
 .reg_text{
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: var(--size-4);
+  font-weight: bold;
   margin-bottom: .7rem;
   color: var(--text-color);
+  font-family: var(--var-1);
   
 }
 
@@ -106,10 +70,15 @@ body{
 .create_acc{
   margin-bottom: .5rem;
   color: var(--white);
+  font-size: var(--size-2);
+  font-family: var(--font-2);
+
 }
 .part{
   margin-bottom: .7rem;
   color: var(--white);
+  font-size: var(--size-1);
+  font-family: var(--font-2);
 }
 .input_value{
   background-color: #FFFFFF08;
@@ -136,6 +105,8 @@ body{
     position: absolute;
     bottom: 3.8rem;
     color: var(--white);
+    font-size: var(--size-1);
+    font-family: var(--font-2);
 }
 .select{
   width: 13rem;
@@ -145,37 +116,30 @@ body{
 .review{
   margin-top: 1.5rem;
   color: var(--text-color);
+  font-family: var(--font-2);
+  font-weight: bold;
 }
 .policy{
   margin: 1rem 0;
   color: var(--white);
+  font-size: var(--size-1);
+  font-family: var(--font-2);
 }
 
-@media only screen and (max-width:700px){
-  .reg_header{
-    display: none;
-  }
+
+
+
+
+
+@media only screen and (max-width:1010px){
+   .register{
+    padding:2rem 1rem ;
+   }
+   .reg_container{
+    padding: 0 .2rem;
   
-}
-@media only screen and (max-width:600px){
-.register{
-  padding: 0;
-}
-.label,.part,.review,.policy{
-  font-size: .9rem;
-}
-.marginRight{
-  margin-right: .5rem;
-}
+  }
 
-}
-@media only screen and (max-width:400px){
-  .marginRight{
-    margin-right: 0;
-  }
-  .reg_form{
-    padding: 0;
-  }
 }
 
 @media only screen and (max-width:900px){
@@ -183,8 +147,10 @@ body{
     position: relative;
     display: flex;
     flex-direction:column;   
-
-     
+    
+  }
+  .label,.part,.review,.policy{
+    font-size: .8rem;
   }
   .reg_form{
     background: transparent;
@@ -223,15 +189,36 @@ body{
 }
 
 
-@media only screen and (max-width:1010px){
-   .register{
-    padding:2rem 1rem ;
-   }
-   .reg_container{
-    padding: 0 .2rem;
-  
-  }
-  
+@media only screen and (max-width:600px){
+.register{
+  padding: 0;
+}
+.label,.part,.review,.policy{
+  font-size: .8rem;
+}
+.marginRight{
+  margin-right: .5rem;
+}
 
 }
 
+
+@media only screen and (max-width:700px){
+  .reg_header{
+    display: none;
+  }
+  
+}
+
+
+@media only screen and (max-width:400px){
+  .marginRight{
+    margin-right: 0;
+  }
+  .reg_form{
+    padding: 0;
+  }
+  .label,.part,.review,.policy{
+    font-size: .8rem;
+  }
+}

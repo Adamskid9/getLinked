@@ -1,0 +1,24 @@
+.loaderBtn{
+    position: absolute;
+    top: 0%;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  animation-name: loader;
+  animation-duration: .3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  border:2px solid var(--color-4);
+  border-top:2px solid var(--color-2);
+
+
+}
+
+@keyframes loader {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

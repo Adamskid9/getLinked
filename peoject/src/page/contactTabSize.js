@@ -1,15 +1,19 @@
-import Button from "../components/button";
+import Button from "../components/btn";
 import Footer from "../components/Footer";
 import GlowEffect from "../components/GlowEffect";
 import { useState } from "react";
 
 
-function ContactTabSize() {
-    const [team,setTeam] = useState();
-    const [topic,setTopic] = useState();
-    const [email,setEmail] = useState();
-    const [message,setMessage] = useState();
-    // kenny use this variable to where it belong
+function ContactTabSize({formData,setFormData}) {
+    
+    const [team,setTeam] = useState("");
+    const [topic,setTopic] = useState("");
+    const [email,setEmail] = useState("");
+    const [message,setMessage] = useState("");
+
+    // storing all data into and array of object
+
+
     console.log(team,topic,email,message)
     return (
         <div className="contactTabSize">
@@ -63,8 +67,9 @@ function ContactTabSize() {
                         <textarea className="textarea" onChange={(e)=>setMessage(e.target.value)} placeholder="Message" style={{padding:"1rem"}}></textarea>
                         <Button name="Submit" style={{marginTop:"1rem"
                         ,alignSelf:"center",width:"9rem",
-                        borderRadius:"4px",padding:"10px"
-                        }}/>
+                        borderRadius:"4px",padding:"10px" }}/>
+
+                     
                      </form>
                      
                  </div>      
